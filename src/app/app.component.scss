@@ -5,23 +5,20 @@ $projects-color: #43b5f5;
 $contact-color: #38a5ff;
 
 .container {
-  height: 70vh;
-  width: 90vw;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: row;
-  border: 3px solid red;
 }
 
 .column {
   height: 100%;
-  width: 100px;
+  width: 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s all;
-}
-.column:hover {
-  width: 120px;
+  cursor: pointer;
 }
 
 .home {
@@ -29,4 +26,24 @@ $contact-color: #38a5ff;
 }
 .about {
   background-color: $about-color;
+}
+.skills {
+  background-color: $skills-color;
+}
+.projects {
+  background-color: $projects-color;
+}
+.contact {
+  background-color: $contact-color;
+}
+
+.home,
+.about,
+.skills,
+.projects,
+.contact {
+  margin-right: 0;
+}
+.active {
+  margin-right: 75vw;
 }

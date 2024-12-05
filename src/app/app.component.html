@@ -1,7 +1,38 @@
 <div class="container">
-  <app-column icon="assets/icons/home.png" class="column home">/></app-column>
-  <app-content-home></app-content-home>
-  <app-column icon="assets/icons/about.png" class="column about">/></app-column>
-  <app-content-about></app-content-about>
-  <router-outlet />
+  <app-column
+    icon="assets/icons/home.png"
+    class="column home"
+    (click)="revealHome()"
+    [ngClass]="{ active: isHomeActive }"
+  ></app-column>
+
+  <app-column
+    icon="assets/icons/about.png"
+    class="column about"
+    (click)="revealAbout()"
+    [ngClass]="{ active: isAboutActive }"
+  ></app-column>
+
+  <app-column
+    icon="assets/icons/skills.png"
+    class="column skills"
+    (click)="revealSkills()"
+    [ngClass]="{ active: isSkillsActive }"
+  ></app-column>
+
+  <app-column
+    icon="assets/icons/projects.png"
+    class="column projects"
+    (click)="revealProjects()"
+    [ngClass]="{ active: isProjectsActive }"
+  ></app-column>
+
+  <app-column
+    icon="assets/icons/contact.png"
+    class="column contact"
+    (click)="revealContact()"
+    [ngClass]="{ active: isContactActive }"
+  ></app-column>
+
+  <router-outlet></router-outlet>
 </div>
