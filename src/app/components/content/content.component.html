@@ -1,0 +1,39 @@
+<main class="content-container" [ngStyle]="{ marginLeft: marginLeft }">
+  <div class="navbar"><app-navbar></app-navbar></div>
+  <div class="content">
+    <section class="home-content" *ngIf="activeColumn === 'home'">
+      <h1>Hello, I'm <span>Eduardo</span></h1>
+      <p>Full stack developer, welcome to my portfolio!</p>
+      <div class="buttons">
+        <button class="btn btn-resume">Resume</button>
+        <button class="btn btn-linkedin">Linkedin</button>
+        <button class="btn btn-github">Github</button>
+      </div>
+    </section>
+
+    <section class="about-content" *ngIf="activeColumn === 'about'">
+      <h1>Sobre Mim</h1>
+      <p>Informações sobre sua experiência e trajetória.</p>
+    </section>
+
+    <section class="skills-content" *ngIf="activeColumn === 'skills'">
+      <h1>Minhas Skills</h1>
+      <ul>
+        <li>JavaScript</li>
+        <li>Angular</li>
+        <li>C#</li>
+        <li>Node.js</li>
+      </ul>
+    </section>
+
+    <section class="projects-content" *ngIf="activeColumn === 'projects'">
+      <h1>Meus Projetos</h1>
+      <p>Aqui estão alguns dos meus projetos recentes.</p>
+    </section>
+
+    <section class="contact-content" *ngIf="activeColumn === 'contact'">
+      <h1>Contato</h1>
+      <p>Entre em contato comigo através das redes sociais.</p>
+    </section>
+  </div>
+</main>

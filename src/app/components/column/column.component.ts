@@ -8,6 +8,14 @@ import { Component, Input } from '@angular/core';
   styleUrl: './column.component.scss',
 })
 export class ColumnComponent {
-  @Input() icon: string = '';
-  @Input() additionalClasses!: string; // Recebe classes dinamicamente
+  @Input() icon: string = ''; // Ícone a ser exibido
+  @Input() color: string = ''; // Cor dinâmica
+  @Input() isActive: boolean = false; // Define se está ativo ou não
+
+  get styles() {
+    return {
+      backgroundColor: this.color,
+      marginRight: this.isActive ? '75vw' : '0',
+    };
+  }
 }

@@ -1,0 +1,91 @@
+$home-color: #61e4d5;
+$about-color: #57d5e0;
+$skills-color: #4dc5ea;
+$projects-color: #43b5f5;
+$contact-color: #38a5ff;
+
+* {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.content-container {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  width: 75vw;
+  padding: 0px;
+  transition: margin-left 1s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  margin: 0;
+  padding: 0 5%;
+}
+
+.home-content {
+  h1 {
+    margin: 0;
+    font-size: 7rem;
+    font-weight: 200;
+    span {
+      color: aquamarine;
+    }
+  }
+  p {
+    margin: 0;
+    font-size: 4rem;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-10%);
+    color: #16191b;
+  }
+}
+
+.btn-resume {
+  color: $home-color;
+  border-color: $home-color;
+  &:hover {
+    background-color: $home-color;
+  }
+}
+
+.btn-linkedin {
+  color: $skills-color;
+  border-color: $skills-color;
+  &:hover {
+    background-color: $skills-color;
+  }
+}
+
+.btn-github {
+  color: $contact-color;
+  border-color: $contact-color;
+  &:hover {
+    background-color: $contact-color;
+  }
+}

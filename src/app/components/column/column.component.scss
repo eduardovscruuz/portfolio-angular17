@@ -1,3 +1,13 @@
+.column {
+  height: 100%;
+  width: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
 img {
-  height: 2vw;
+  height: 1vw;
 }

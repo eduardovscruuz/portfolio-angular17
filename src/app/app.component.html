@@ -1,38 +1,38 @@
 <div class="container">
   <app-column
     icon="assets/icons/home.png"
-    class="column home"
+    [color]="'#61e4d5'"
+    [isActive]="isHomeActive"
     (click)="revealHome()"
-    [ngClass]="{ active: isHomeActive }"
   ></app-column>
 
   <app-column
     icon="assets/icons/about.png"
-    class="column about"
+    [color]="'#57d5e0'"
+    [isActive]="isAboutActive"
     (click)="revealAbout()"
-    [ngClass]="{ active: isAboutActive }"
   ></app-column>
 
   <app-column
     icon="assets/icons/skills.png"
-    class="column skills"
+    [color]="'#4dc5ea'"
+    [isActive]="isSkillsActive"
     (click)="revealSkills()"
-    [ngClass]="{ active: isSkillsActive }"
   ></app-column>
 
   <app-column
     icon="assets/icons/projects.png"
-    class="column projects"
+    [color]="'#43b5f5'"
+    [isActive]="isProjectsActive"
     (click)="revealProjects()"
-    [ngClass]="{ active: isProjectsActive }"
   ></app-column>
 
   <app-column
     icon="assets/icons/contact.png"
-    class="column contact"
+    [color]="'#38a5ff'"
+    [isActive]="isContactActive"
     (click)="revealContact()"
-    [ngClass]="{ active: isContactActive }"
   ></app-column>
-
+  <app-content [activeColumn]="activeColumn"></app-content>
   <router-outlet></router-outlet>
 </div>
