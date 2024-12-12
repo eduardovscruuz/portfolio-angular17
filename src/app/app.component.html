@@ -1,38 +1,38 @@
 <div class="container">
   <app-column
-    icon="assets/icons/home.png"
-    [color]="'#61e4d5'"
+    [icon]="'assets/icons/home.png'"
+    [color]="colorHome"
     [isActive]="isHomeActive"
     (click)="revealHome()"
   ></app-column>
 
   <app-column
-    icon="assets/icons/about.png"
-    [color]="'#57d5e0'"
+    [icon]="'assets/icons/about.png'"
+    [color]="colorAbout"
     [isActive]="isAboutActive"
     (click)="revealAbout()"
   ></app-column>
 
   <app-column
-    icon="assets/icons/skills.png"
-    [color]="'#4dc5ea'"
+    [icon]="'assets/icons/skills.png'"
+    [color]="colorSkills"
     [isActive]="isSkillsActive"
     (click)="revealSkills()"
   ></app-column>
 
   <app-column
-    icon="assets/icons/projects.png"
-    [color]="'#43b5f5'"
+    [icon]="'assets/icons/projects.png'"
+    [color]="colorProjects"
     [isActive]="isProjectsActive"
     (click)="revealProjects()"
   ></app-column>
 
   <app-column
-    icon="assets/icons/contact.png"
-    [color]="'#38a5ff'"
+    [icon]="'assets/icons/contact.png'"
+    [color]="colorContact"
     [isActive]="isContactActive"
     (click)="revealContact()"
   ></app-column>
-  <app-content [activeColumn]="activeColumn"></app-content>
+  <app-content></app-content>
   <router-outlet></router-outlet>
 </div>

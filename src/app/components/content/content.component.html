@@ -1,7 +1,8 @@
-<main class="content-container" [ngStyle]="{ marginLeft: marginLeft }">
-  <div class="navbar"><app-navbar></app-navbar></div>
+<main class="content-container">
+  <nav>NAVBAR AQUI</nav>
   <div class="content">
-    <section class="home-content" *ngIf="activeColumn === 'home'">
+    @if(activeColumn === 'home') {
+    <section class="home-content">
       <h1>Hello, I'm <span>Eduardo</span></h1>
       <p>Full stack developer, welcome to my portfolio!</p>
       <div class="buttons">
@@ -10,30 +11,78 @@
         <button class="btn btn-github">Github</button>
       </div>
     </section>
-
-    <section class="about-content" *ngIf="activeColumn === 'about'">
+    } @if(activeColumn === 'about') {
+    <section class="about-content">
       <h1>Sobre Mim</h1>
       <p>Informações sobre sua experiência e trajetória.</p>
     </section>
-
-    <section class="skills-content" *ngIf="activeColumn === 'skills'">
-      <h1>Minhas Skills</h1>
-      <ul>
-        <li>JavaScript</li>
-        <li>Angular</li>
-        <li>C#</li>
-        <li>Node.js</li>
-      </ul>
+    } @if(activeColumn === 'skills') {
+    <section class="skills-content">
+      <p>
+        My tech stack emphasizes strongly typed languages and <span>object-oriented programming</span> , ensuring both
+        robustness and <span>scalability</span>. On the front end, I leverage TypeScript with Angular and SASS to build
+        elegant, functional interfaces. On the back end, I specialize in NestJS, C#, and .NET to deliver efficient,
+        well-structured APIs. With experience in relational and non-relational databases,
+        <span>I tailor the best solutions</span> to fit each project’s needs.
+      </p>
+      <div class="tech-stack">
+        <img
+          *ngFor="let tech of techStack"
+          class="flip"
+          [ngClass]="{ flipping: tech.isFlipping }"
+          (mouseenter)="onMouseEnter(tech)"
+          (animationend)="onAnimationEnd(tech)"
+          [src]="tech.src"
+          alt="tech logo"
+        />
+      </div>
     </section>
-
-    <section class="projects-content" *ngIf="activeColumn === 'projects'">
+    } @if(activeColumn === 'projects') {
+    <section class="projects-content">
       <h1>Meus Projetos</h1>
       <p>Aqui estão alguns dos meus projetos recentes.</p>
     </section>
-
-    <section class="contact-content" *ngIf="activeColumn === 'contact'">
-      <h1>Contato</h1>
-      <p>Entre em contato comigo através das redes sociais.</p>
+    } @if(activeColumn === 'contact'){
+    <section class="contact-content">
+      <div class="contact-form">
+        <div class="letschat">
+          <h2>Let's chat!</h2>
+          <p>wheter you have a question, want to start new project, or simply wants to connect.</p>
+          <p>
+            feel free to send me a message in the contact form, or directly send me an e-mail in:
+            "eduardovscruuz&#64;gmail.com"
+          </p>
+        </div>
+        <form action="#" method="post" id="contact_form">
+          <div class="name">
+            <label for="name"></label>
+            <input type="text" placeholder="My name is" name="name" id="name_input" required />
+          </div>
+          <div class="email">
+            <label for="email"></label>
+            <input type="email" placeholder="My e-mail is" name="email" id="email_input" required />
+          </div>
+          <div class="subject">
+            <label for="subject"></label>
+            <input type="text" placeholder="Subject" name="email" id="subject_input" required />
+          </div>
+          <div class="message">
+            <label for="message"></label>
+            <textarea
+              name="message"
+              placeholder="I'd like to chat about"
+              id="message_input"
+              cols="30"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="submit">
+            <input type="submit" value="Send Message" id="form_button" />
+          </div>
+        </form>
+      </div>
     </section>
+    }
   </div>
 </main>

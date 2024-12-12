@@ -6,6 +6,9 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease-out;
+  &:hover {
+    width: 7vw;
+  }
 }
 
 img {

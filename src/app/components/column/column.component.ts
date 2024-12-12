@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-column',
@@ -12,7 +12,7 @@ export class ColumnComponent {
   @Input() color: string = ''; // Cor dinâmica
   @Input() isActive: boolean = false; // Define se está ativo ou não
 
-  get styles() {
+  getstyles() {
     return {
       backgroundColor: this.color,
       marginRight: this.isActive ? '75vw' : '0',

@@ -1,36 +1,34 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-content',
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
 })
 export class ContentComponent {
-  @Input() activeColumn: string = '';
+  activeColumn: string = 'contact';
+  techStack = [
+    { src: 'assets/tech-stack/javascript.png', isFlipping: false },
+    { src: 'assets/tech-stack/sass.png', isFlipping: false },
+    { src: 'assets/tech-stack/typescript.png', isFlipping: false },
+    { src: 'assets/tech-stack/angular.png', isFlipping: false },
+    { src: 'assets/tech-stack/csharp.png', isFlipping: false },
+    { src: 'assets/tech-stack/dotnet.png', isFlipping: false },
+    { src: 'assets/tech-stack/node.png', isFlipping: false },
+    { src: 'assets/tech-stack/nest.png', isFlipping: false },
+    { src: 'assets/tech-stack/git.png', isFlipping: false },
+    { src: 'assets/tech-stack/docker.png', isFlipping: false },
+    { src: 'assets/tech-stack/mysql.png', isFlipping: false },
+    { src: 'assets/tech-stack/mongodb.png', isFlipping: false },
+  ];
 
-  get marginLeft(): string {
-    const columns = ['home', 'about', 'skills', 'projects', 'contact'];
-    const index = columns.indexOf(this.activeColumn);
-    return `${5 + index * 5}vw`; // Calcula a posição com base na coluna ativa
+  onMouseEnter(tech: any) {
+    tech.isFlipping = true;
   }
 
-  get content(): string {
-    switch (this.activeColumn) {
-      case 'home':
-        return 'Bem-vindo à Home!';
-      case 'about':
-        return 'Sobre Mim';
-      case 'skills':
-        return 'Minhas Skills';
-      case 'projects':
-        return 'Meus Projetos';
-      case 'contact':
-        return 'Entre em Contato';
-      default:
-        return '';
-    }
+  onAnimationEnd(tech: any) {
+    tech.isFlipping = false;
   }
 }

@@ -3,22 +3,27 @@ import { RouterOutlet } from '@angular/router';
 import { ColumnComponent } from './components/column/column.component';
 import { CommonModule } from '@angular/common';
 import { ContentComponent } from './components/content/content.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, ColumnComponent, ContentComponent, CommonModule],
+  imports: [RouterOutlet, ColumnComponent, CommonModule, ContentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'portfolio-angular';
+  colorHome: string = '#61e4d5';
+  colorAbout: string = '#57d5e0';
+  colorSkills: string = '#4dc5ea';
+  colorProjects: string = '#43b5f5';
+  colorContact: string = '#38a5ff';
+
   isHomeActive = true; // Inicialmente ativa a coluna "home"
   isAboutActive = false;
   isSkillsActive = false;
   isProjectsActive = false;
   isContactActive = false;
-  activeColumn: string = 'home';
+  titulo: string = '';
 
   revealHome(): void {
     this.isHomeActive = true;
@@ -26,7 +31,6 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.activeColumn = 'home';
   }
   revealAbout(): void {
     this.isHomeActive = false;
@@ -34,7 +38,6 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.activeColumn = 'about';
   }
   revealSkills(): void {
     this.isHomeActive = false;
@@ -42,7 +45,6 @@ export class AppComponent {
     this.isSkillsActive = true;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.activeColumn = 'skills';
   }
   revealProjects(): void {
     this.isHomeActive = false;
@@ -50,7 +52,6 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = true;
     this.isContactActive = false;
-    this.activeColumn = 'projects';
   }
   revealContact(): void {
     this.isHomeActive = false;
@@ -58,6 +59,13 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = true;
-    this.activeColumn = 'contact';
+  }
+
+  columnFocused() {
+    console.log(this.titulo);
+  }
+
+  columnUnfocused() {
+    console.log('desfocou');
   }
 }
