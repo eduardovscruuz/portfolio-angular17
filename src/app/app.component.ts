@@ -24,7 +24,7 @@ export class AppComponent {
   isSkillsActive = false;
   isProjectsActive = false;
   isContactActive = false;
-  tituloMover: string = 'home';
+  pageName: string = 'home';
 
   revealHome(): void {
     this.isHomeActive = true;
@@ -32,7 +32,7 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.tituloMover = 'home';
+    this.pageName = 'home';
   }
   revealAbout(): void {
     this.isHomeActive = false;
@@ -40,7 +40,7 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.tituloMover = 'about';
+    this.pageName = 'about';
   }
   revealSkills(): void {
     this.isHomeActive = false;
@@ -48,7 +48,7 @@ export class AppComponent {
     this.isSkillsActive = true;
     this.isProjectsActive = false;
     this.isContactActive = false;
-    this.tituloMover = 'skills';
+    this.pageName = 'skills';
   }
   revealProjects(): void {
     this.isHomeActive = false;
@@ -56,7 +56,7 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = true;
     this.isContactActive = false;
-    this.tituloMover = 'projects';
+    this.pageName = 'projects';
   }
   revealContact(): void {
     this.isHomeActive = false;
@@ -64,6 +64,6 @@ export class AppComponent {
     this.isSkillsActive = false;
     this.isProjectsActive = false;
     this.isContactActive = true;
-    this.tituloMover = 'contact';
+    this.pageName = 'contact';
   }
 }

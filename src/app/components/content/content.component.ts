@@ -10,21 +10,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './content.component.scss',
 })
 export class ContentComponent {
-  @Input() move: string = '';
+  @Input() pagePosition: string = '';
 
-  moverColuna(): { left: string } {
-    if (this.move === 'home') {
+  moveAccordingToPage(): { left: string } {
+    if (this.pagePosition === 'home') {
       return { left: '5vw' };
-    } else if (this.move === 'about') {
+    } else if (this.pagePosition === 'about') {
       return { left: '10vw' };
-    } else if (this.move === 'skills') {
+    } else if (this.pagePosition === 'skills') {
       return { left: '15vw' };
-    } else if (this.move === 'projects') {
+    } else if (this.pagePosition === 'projects') {
       return { left: '20vw' };
-    } else if (this.move === 'contact') {
+    } else if (this.pagePosition === 'contact') {
       return { left: '25vw' };
     }
-    // Valor padrão caso nenhuma condição seja atendida
     return { left: '0vw' };
   }
 }

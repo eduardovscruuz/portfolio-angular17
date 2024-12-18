@@ -1,6 +1,10 @@
 .navbar {
-  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10%;
+  background-color: rgb(68, 68, 68);
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 10%;
-  background-color: rgb(213, 255, 25);
-  //opacity: 0;
 }

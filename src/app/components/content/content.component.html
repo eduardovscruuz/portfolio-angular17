@@ -1,6 +1,11 @@
-<div [ngStyle]="moverColuna()" class="container">
-  <app-navbar></app-navbar>
-  <div class="content-wrapper hidden">
-    <div class="content">HOME</div>
+<div [ngStyle]="moveAccordingToPage()" class="container">
+  <app-navbar [navbarTitle]="pagePosition"></app-navbar>
+
+  <div class="content-wrapper">
+    <div *ngIf="pagePosition === 'home'" class="content home">HOME</div>
+    <div *ngIf="pagePosition === 'about'" class="content about">ABOUT ME INFO</div>
+    <div *ngIf="pagePosition === 'skills'" class="content">SKILLS INFO</div>
+    <div *ngIf="pagePosition === 'projects'" class="content">PROJECTS INFO</div>
+    <div *ngIf="pagePosition === 'contact'" class="content">CONTACT INFO</div>
   </div>
 </div>
